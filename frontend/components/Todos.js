@@ -1,5 +1,6 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import styled from 'styled-components'
+import { TodosContext } from '../context/todos'
 
 const StyledTodo = styled.li`
   text-decoration: ${pr => pr.$complete ? 'line-through' : 'initial'};
@@ -12,7 +13,7 @@ export default function Todo(props) {
     toggleTodo,
     showCompletedTodos,
     toggleShowCompletedTodos
-  } = props
+  } = useContext(TodosContext)
 
   return (
     <div id="todos">
